@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrashTrack - Bank Sampah Digital Sekolah</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌱 TrashTrack</h1>
+        <p>Ubah Sampah Terpilah Menjadi Poin & Hadiah Menarik!</p>
+    </header>
+
+    <main class="container">
+        <!-- Bagian Form Setor Sampah -->
+        <section class="card">
+            <h2>Form Setor Sampah</h2>
+            <form id="trashForm">
+                <div class="form-group">
+                    <label for="nama">Nama Siswa / Kelas</label>
+                    <input type="text" id="nama" placeholder="Contoh: Budi (XI RPL 1)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="jenis">Jenis Sampah Anorganik</label>
+                    <select id="jenis" required>
+                        <option value="50">Plastik (50 Poin / kg)</option>
+                        <option value="30">Kertas / Kardus (30 Poin / kg)</option>
+                        <option value="100">Logam / Kaleng (100 Poin / kg)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="berat">Berat Sampah (kg)</label>
+                    <input type="number" id="berat" step="0.1" min="0.1" placeholder="Contoh: 1.5" required>
+                </div>
+
+                <button type="submit" class="btn-submit">Setor & Hitung Poin</button>
+            </form>
+        </section>
+
+        <!-- Bagian Papan Peringkat -->
+        <section class="card">
+            <div class="header-board">
+                <h2>🏆 Papan Peringkat Poin</h2>
+                <button id="resetBtn" class="btn-reset">Reset Data</button>
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Peringkat</th>
+                        <th>Nama</th>
+                        <th>Total Berat</th>
+                        <th>Total Poin</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                    <!-- Data akan muncul otomatis lewat JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
